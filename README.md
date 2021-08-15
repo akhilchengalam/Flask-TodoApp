@@ -68,7 +68,8 @@
 8. Create view for adding Todo notes
     _Add this to views.py_
     
-    
+
+
     `@app.route("/add", methods=["POST"])
     def add():
         title = request.form.get("title")
@@ -80,8 +81,8 @@
 9. Create the view for updating a note
     _add this to views.py_
     
-`
-    @app.route("/update/<int:todo_id>")
+
+    `@app.route("/update/<int:todo_id>")
     def update(todo_id):
         todo = Todo.query.filter_by(id=todo_id).first()
         todo.complete = not todo.complete
@@ -93,7 +94,7 @@
     _add this to views.py_
     
 
-`    @app.route("/delete/<int:todo_id>")
+    `@app.route("/delete/<int:todo_id>")
     def delete(todo_id):
         todo = Todo.query.filter_by(id=todo_id).first()
         db.session.delete(todo)
